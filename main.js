@@ -1,4 +1,4 @@
-import { dialog, ipcMain } from "electron";
+const { dialog, ipcMain } = require("electron");
 
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
@@ -18,7 +18,7 @@ const createWindow = () => {
   win.loadFile(""); // -- INSERT FILENAME HERE
 };
 
-ipcMain.handle("save-file", async (event, filename: any, content: any) => {
+ipcMain.handle("save-file", async (event, filename, content) => {
   const filePath = dialog.showSaveDialogSync({ defaultPath: filename });
   if (!filePath) return false;
   fs.writeSync(filePath, content);

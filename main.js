@@ -9,13 +9,13 @@ const createWindow = () => {
     width: 800,
     height: 800,
     webPreferences: {
-      preload: path.join(__dirname, "preload.ts"),
+      preload: path.join(__dirname, "preload.js"),
       contextIsoloation: true,
       nodeIntegation: false,
     },
   });
 
-  win.loadFile(""); // -- INSERT FILENAME HERE
+  win.loadFile("./source/index.html"); // -- INSERT FILENAME HERE
 };
 
 ipcMain.handle("save-file", async (event, filename, content) => {

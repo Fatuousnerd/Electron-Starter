@@ -4,6 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "dev": "electron --trace-warnings .",
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +21,6 @@
   },
   "homepage": "https://github.com/Fatuousnerd/Electron-Starter#readme",
   "devDependencies": {
-    "electron": "^39.2.7"
+    "electron": "^42.0.1"
   }
 }
